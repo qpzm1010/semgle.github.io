@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>semgle - 프로젝트</title>
+  <link rel="icon" href="assets/img/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/icon.png" alt="semgle logo" class="logo" />
+      </a>
+    </div>
+    <div class="header-right">
+      <nav>
+        <a href="index.html">홈</a>
+        <a href="members.html">구성원</a>
+      </nav>
+      <button id="darkToggle">☀️</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-section">
+      <h2>PROJECTS</h2>
+      <div class="project-list" id="projectList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>경기도 OO고등학교 / semgle</p>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        id: "WEBPAGE",
+        title: "SEMGLE",
+        image: "assets/img/icon.png",
+        brief: "SEMGLE 웹페이지",
+        description: "SEMGLE WEBPAGE GITHUB PAGE",
+        link: "https://github.com/semgle/cloud-infra",
+        stack: ["HTML", "CSS", "JS"],
+        authors: ["임준범"]
+      },
+      {
+        id: "AWS-ERASER",
+        title: "AWS-ERASER",
+        image: "assets/img/project2.png",
+        brief: "AWS 리소스 삭제",
+        description: "웹을 이용한 편하게 사용할수있는 AWS 리소스 삭제 웹사이트",
+        link: "https://aws-earser.kro.kr",
+        stack: ["Docker", "Nginx", "PHP", "MYSQL"],
+        authors: ["임준범"]
+      }
+    ];
+
+    const container = document.getElementById("projectList");
+
+    projects.forEach(project => {
+      const item = document.createElement("div");
+      item.className = "project-item";
+      item.innerHTML = `
+        <div class="project-summary" data-id="${project.id}">
+          <img src="${project.image}" class="project-img" alt="${project.title}" />
+          <div class="project-info">
+            <h3>${project.title}</h3>
+            <p>${project.brief}</p>
+          </div>
+        </div>
+        <div class="project-detail hidden" id="detail-${project.id}">
+          <p>${project.description}</p>
+          <a href="${project.link}" class="project-link" target="_blank">🔗 관련 링크</a>
+          <ul class="stack-list">
+            ${project.stack.map(s => `<li># ${s}</li>`).join("")}
+          </ul>
+          <p class="author">👨‍💻 개발자: ${project.authors.join(", ")}</p>
+        </div>
+      `;
+      container.appendChild(item);
+    });
+
+    document.querySelectorAll(".project-summary").forEach(summary => {
+      summary.addEventListener("click", () => {
+        const id = summary.dataset.id;
+        const detail = document.getElementById(`detail-${id}`);
+        detail.classList.toggle("hidden");
+      });
+    });
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('darkToggle').textContent = '🌙';
+    });
+  }
+
+  // 토글 이벤트
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    darkToggle.textContent = isDark ? '🌙' : '☀️';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  </script>
+</body>
+</html>

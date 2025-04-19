@@ -1,0 +1,395 @@
+/* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background-color: #f4f9ff;
+  color: #1a1a1a;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1a1a1a;
+  color: #f4f9ff;
+}
+
+/* 헤더 */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body.dark header {
+  background-color: #2a2a2a;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: clamp(80px, 6vw, 80px);
+}
+
+header h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #1e60c5;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  padding: 8px 16px;
+  background-color: #e6f0ff;
+  border-radius: 6px;
+  color: #1e60c5;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background-color: #d0e3ff;
+  transform: translateY(-2px);
+}
+
+body.dark nav a {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+body.dark nav a:hover {
+  background-color: #555;
+}
+
+#darkToggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#darkToggle:hover {
+  transform: rotate(15deg);
+}
+
+/* 인트로 */
+.intro {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.intro h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.no-dark h2,
+.no-dark p {
+  color: white !important;
+}
+
+.intro-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../img/back.png') center/cover no-repeat;
+  z-index: 1;
+}
+
+body.dark .intro-bg {
+  opacity: 0.3;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease-in-out both;
+}
+
+.animate-fade.delay {
+  animation-delay: 0.5s;
+}
+
+.animate-slide {
+  animation: slideUp 1s ease-in-out both;
+}
+
+.animate-fade-bg {
+  animation: fadeIn 2s ease-out both;
+}
+
+/* Information 섹션 */
+.info {
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.info h3 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.info-desc {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .count {
+  font-size: 3rem;
+  color: #1e60c5;
+  display: block;
+}
+
+.stat p {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* 구성원 배너 */
+.banner-section {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.banner-image {
+  position: relative;
+  background: url('../img/back.png') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-button {
+  padding: 15px 40px;
+  background-color: #ffffff;
+  color: #1e60c5;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.banner-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-3px);
+}
+
+/* 프로젝트 */
+.project-preview {
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+}
+
+.project-preview h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project-card {
+  width: 220px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.project-card p {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 활동 */
+.event {
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+.event h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.event-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.event-card {
+  width: 200px;
+  text-align: center;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.event-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* 푸터 */
+footer {
+  margin-top: 100px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+body.dark footer {
+  background-color: #2a2a2a;
+  color: #ccc;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .project-grid,
+  .event-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-button {
+    width: 80%;
+  }
+
+  .banner-image {
+    height: 200px;
+  }
+
+  .project-card,
+  .event-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}

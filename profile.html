@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>semgle - 프로필</title>
+  <link rel="icon" href="assets/img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/profile.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/icon.png" alt="semgle logo" class="logo" />
+      </a>
+    </div>
+    <div class="header-right">
+      <nav>
+        <a href="index.html">홈</a>
+        <a href="projects.html">프로젝트</a>
+      </nav>
+      <button id="darkToggle">☀️</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="profileSection" class="profile">
+      <p>멤버 정보를 불러오는 중입니다...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>경기도 OO고등학교 / semgle</p>
+  </footer>
+
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('darkToggle').textContent = '🌙';
+    });
+  }
+
+  // 토글 이벤트
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    darkToggle.textContent = isDark ? '🌙' : '☀️';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+    const membersData = [
+        { id: 'Limjunbeom', name: '임준범', category: '클라우드컴퓨팅', bio: '🥉🥉', github: 'https://github.com/qpzm1010' },
+        { id: 'Kimgunwoo', name: '김건우', category: '사이버보안', bio: '🥉🥈', github: 'https://github.com/kimgunwoo' },
+        { id: 'Kimjunseo', name: '김준서', category: '클라우드컴퓨팅', bio: '', github: '' },
+        { id: 'Leesungwon', name: '이승원', category: '사이버보안', bio: '', github: '' },
+        { id: 'Leehyun', name: '이현', category: '클라우드컴퓨팅', bio: '', github: '' }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const target = membersData.find(m => m.id === id);
+    const section = document.getElementById('profileSection');
+
+    if (!target) {
+      section.innerHTML = '<p>해당 멤버를 찾을 수 없습니다.</p>';
+    } else {
+      section.innerHTML = `
+        <div class="profile-card ${target.category === '클라우드컴퓨팅' ? 'cloud' : 'cyber'}">
+          <div class="avatar"></div>
+          <h2>${target.name}</h2>
+          <p class="category">${target.category}</p>
+          <p class="bio">${target.bio}</p>
+          ${target.github ? `<a class="github-link" href="${target.github}" target="_blank">🔗 GitHub</a>` : ''}
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
