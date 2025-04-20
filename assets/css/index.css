@@ -47,7 +47,7 @@ body.dark header {
 }
 
 .logo {
-  height: clamp(80px, 6vw, 80px);
+  height: clamp(90px, 6vw, 90px);
 }
 
 header h1 {
@@ -221,6 +221,24 @@ body.dark .intro-bg {
   position: relative;
   background: url('../img/back.png') center/cover no-repeat;
   height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-image1 {
+  position: relative;
+  background: url('../img/banner1.png') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-image2 {
+  position: relative;
+  background: url('../img/banner2.png') center/cover no-repeat;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
