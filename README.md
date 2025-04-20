@@ -12,7 +12,6 @@
 
 - HTML5, CSS3
 - JavaScript
-- GitHub Pages
 ---
 
 ## 🔗 외부 링크
