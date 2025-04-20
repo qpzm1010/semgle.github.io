@@ -220,7 +220,7 @@ body.dark .intro-bg {
 .banner-image {
   position: relative;
   background: url('../img/back.png') center/cover no-repeat;
-  height: 300px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,11 +236,11 @@ body.dark .intro-bg {
 }
 
 .banner-button {
-  padding: 15px 40px;
+  padding: 30px 55px;
   background-color: #ffffff;
   color: #1e60c5;
-  border-radius: 8px;
-  font-size: 1.2rem;
+  border-radius: 30px;
+  font-size: 2.2rem;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.2s, transform 0.2s;
