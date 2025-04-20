@@ -1,4 +1,4 @@
-/* 기본 설정 */
+
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +47,7 @@ body.dark header {
 }
 
 .logo {
-  height: clamp(80px, 6vw, 80px);
+  height: clamp(90px, 6vw, 90px);
 }
 
 header h1 {
@@ -96,7 +96,7 @@ body.dark nav a:hover {
   transform: rotate(15deg);
 }
 
-/* 인트로 */
+
 .intro {
   position: relative;
   height: 100vh;
@@ -110,18 +110,24 @@ body.dark nav a:hover {
 .intro-text {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 1200px;
   padding: 20px;
+  text-align: center;
 }
 
 .intro h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   margin-bottom: 20px;
 }
 
 .intro p {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  white-space: nowrap;
 }
+
+
+
 
 .no-dark h2,
 .no-dark p {
