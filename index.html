@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>셈글 - HANBOMSKILLS</title>
-  <meta name="description" content="hanbom high-school bigdata semgle">
+
+  <title>Semgle - 한봄고등학교 빅데이터정보과 전공심화동아리</title>
+  <meta name="description" content="셈글은 한봄고등학교의 빅데이터정보과 전공심화 동아리입니다.">
+  <meta name="keywords" content="Semgle, 한봄고, 클라우드, 사이버보안, 전공심화, 고등학교, 동아리, 프로젝트, 기능대회, 셈글">
+  <meta name="author" content="Semgle" />
+
+  <meta property="og:title" content="Semgle - 한봄고 클라우드·사이버보안 동아리" />
+  <meta property="og:description" content="한봄고등학교의 전공심화 IT 동아리, Semgle의 활동과 프로젝트를 만나보세요." />
+  <meta property="og:image" content="https://semgle.kro.kr/assets/img/icon.png" />
+  <meta property="og:url" content="https://semgle.kro.kr/" />
+  <meta property="og:type" content="website" />
+
   <link rel="icon" href="assets/img/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/index.css" />
@@ -88,48 +98,46 @@
   </footer>
 
   <script>
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('darkToggle').textContent = '🌙';
-    });
-  }
-
-  // 토글 이벤트
-  const darkToggle = document.getElementById('darkToggle');
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    const isDark = document.body.classList.contains('dark');
-    darkToggle.textContent = isDark ? '🌙' : '☀️';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-
-  const counters = document.querySelectorAll('.count');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = +el.getAttribute('data-target');
-      const suffix = el.getAttribute('data-suffix') || '';
-      let count = 0;
-      const step = target / 100;
-      const interval = setInterval(() => {
-        count += step;
-        if (count >= target) {
-          el.textContent = target + suffix;
-          clearInterval(interval);
-        } else {
-          el.textContent = Math.floor(count) + suffix;
-        }
-      }, 20);
-      observer.unobserve(el);
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('darkToggle').textContent = '🌙';
+      });
     }
-  });
-}, { threshold: 0.5 });
 
-counters.forEach(counter => observer.observe(counter));
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      darkToggle.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
 
+    const counters = document.querySelectorAll('.count');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = +el.getAttribute('data-target');
+          const suffix = el.getAttribute('data-suffix') || '';
+          let count = 0;
+          const step = target / 100;
+          const interval = setInterval(() => {
+            count += step;
+            if (count >= target) {
+              el.textContent = target + suffix;
+              clearInterval(interval);
+            } else {
+              el.textContent = Math.floor(count) + suffix;
+            }
+          }, 20);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
 
     const animated = document.querySelectorAll('.animate-fade-up');
     const fadeObserver = new IntersectionObserver(entries => {
