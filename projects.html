@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>semgle - 프로젝트</title>
-  <link rel="icon" href="assets/img/icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/projects.css">
+  <link rel="icon" href="assets/img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
 </head>
 <body>
   <header>
@@ -48,7 +48,7 @@
         title: "AWS-ERASER",
         image: "assets/img/project2.png",
         brief: "AWS 리소스 삭제",
-        description: "웹을 이용한 편하게 사용할수있는 AWS 리소스 삭제 웹사이트",
+        description: "웹을 이용한 편하게 사용할 수 있는 AWS 리소스 삭제 웹사이트",
         link: "https://aws-earser.kro.kr",
         stack: ["Docker", "Nginx", "PHP", "MYSQL"],
         authors: ["임준범"]
@@ -61,14 +61,14 @@
       const item = document.createElement("div");
       item.className = "project-item";
       item.innerHTML = `
-        <div class="project-summary" data-id="${project.id}">
+        <div class="project-summary">
           <img src="${project.image}" class="project-img" alt="${project.title}" />
           <div class="project-info">
             <h3>${project.title}</h3>
             <p>${project.brief}</p>
           </div>
         </div>
-        <div class="project-detail hidden" id="detail-${project.id}">
+        <div class="project-detail">
           <p>${project.description}</p>
           <a href="${project.link}" class="project-link" target="_blank">🔗 관련 링크</a>
           <ul class="stack-list">
@@ -80,30 +80,21 @@
       container.appendChild(item);
     });
 
-    document.querySelectorAll(".project-summary").forEach(summary => {
-      summary.addEventListener("click", () => {
-        const id = summary.dataset.id;
-        const detail = document.getElementById(`detail-${id}`);
-        detail.classList.toggle("hidden");
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('darkToggle').textContent = '🌙';
       });
-    });
+    }
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('darkToggle').textContent = '🌙';
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      darkToggle.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
-  }
-
-  // 토글 이벤트
-  const darkToggle = document.getElementById('darkToggle');
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    const isDark = document.body.classList.contains('dark');
-    darkToggle.textContent = isDark ? '🌙' : '☀️';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
   </script>
 </body>
 </html>
