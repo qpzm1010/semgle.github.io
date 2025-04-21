@@ -3,18 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Semgle - 한봄고등학교 빅데이터정보과 전공심화동아리</title>
   <meta name="description" content="셈글은 한봄고등학교의 빅데이터정보과 전공심화 동아리입니다.">
   <meta name="keywords" content="Semgle, 한봄고, 클라우드, 사이버보안, 전공심화, 고등학교, 동아리, 프로젝트, 기능대회, 셈글">
   <meta name="author" content="Semgle" />
-
-  <meta property="og:title" content="Semgle - 한봄고 클라우드·사이버보안 동아리" />
-  <meta property="og:description" content="한봄고등학교의 전공심화 IT 동아리, Semgle의 활동과 프로젝트를 만나보세요." />
-  <meta property="og:image" content="https://semgle.kro.kr/assets/img/icon.png" />
-  <meta property="og:url" content="https://semgle.kro.kr/" />
-  <meta property="og:type" content="website" />
-
   <link rel="icon" href="assets/img/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/index.css" />
@@ -34,7 +26,6 @@
       <button id="darkToggle">☀️</button>
     </div>
   </header>
-
   <main>
     <section class="intro">
       <div class="intro-text no-dark animate-slide">
@@ -43,7 +34,6 @@
       </div>
       <div class="intro-bg animate-fade-bg"></div>
     </section>
-
     <section class="info animate-fade-up" id="info">
       <h3>Information</h3>
       <p class="info-desc">Semgle은 한봄고등학교 빅데이터정보과의 전공심화 동아리로, 다양한 대회에 참여하며 여러 외부활동을 하고있습니다..</p>
@@ -54,14 +44,39 @@
       </div>
     </section>
 
-    <section class="banner-section animate-fade-up" id="member">
-      <div class="banner-image1">
-        <div class="banner-overlay">
-          <a href="members.html" class="banner-button">MEMBERS</a>
-        </div>
+    <section class="member-preview animate-fade-up" id="member">
+      <h3>Current member</h3>
+
+      <div class="members-group" id="cloudGroup">
+        <h4>클라우드컴퓨팅</h4>
+        &nbsp; 
+        <div class="member-preview-grid" id="cloudContainer"></div>
+      </div>
+      &nbsp;
+      &nbsp; 
+      &nbsp; 
+      &nbsp; 
+      &nbsp; 
+      &nbsp;
+      <div class="members-group" id="cyberGroup">
+        <h4>사이버보안</h4>
+        &nbsp; 
+        <div class="member-preview-grid" id="cyberContainer"></div>
+      </div>
+
+      <div class="preview-more">
+        <a href="members.html" class="banner-button">역대멤버 전체 보기 🔎</a>
       </div>
     </section>
+    <pre>
 
+
+
+
+
+
+
+    </pre>
     <section class="project-preview animate-fade-up" id="project">
       <h3>PROJECTS</h3>
       <p class="info-desc">클라우드 컴퓨팅과 사이버보안 관련 프로젝트 및 대회를 준비하며, 필요한 시스템을 구축하고 역량을 강화하기 위한 활동을 진행하고 있습니다.</p>
@@ -74,14 +89,25 @@
           <div class="card-img-wrap"><img src="assets/img/project2.png" alt="프로젝트 2"></div>
           <div class="card-text">AWS 리소스 삭제</div>
         </a>
+        <section class="banner-section animate-fade-up" id="member">
+            <div class="banner-overlay">
+            </div>
+          </div>
+          <div class="preview-more">
+            <a href="projects.html" class="banner-button">프로젝트 전체 보기 🔎</a>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="banner-section animate-fade-up" id="member">
-      <div class="banner-image">
-        </div>
-      </div>
-    </section>
+    <pre>
+
+
+
+
+
+    </pre>
+
 
     <section class="event animate-fade-up" id="event">
       <h3>EVENT</h3>
@@ -89,21 +115,60 @@
       <div class="event-grid">
         <div class="event-card">
           <img src="assets/img/og_image.jpg" alt="CTF">
-          <p>사이버가디언즈</p>
+          <div class="event-text">
+            <h4>사이버가디언즈</h4>
+            <p>고등학교 대상으로 현업 전문가가 개발한 정보보안 맞춤형 교육 운영체계를 제공하여 사이버 보안의 인재 조기 발굴 및 양성하는 프로그램 입니다.</p>
+          </div>
         </div>
         <div class="event-card">
-          <img src="assets/img/event2.png" alt="세미나">
-          <p>경기기능대회</p>
+          <img src="assets/img/event2.png" alt="기능대회">
+          <div class="event-text">
+            <h4>기능경기대회</h4>
+            <p>숙련기술수준의 향상과 기술 및 기능 개발을 목적으로 한 대회입니다.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
-
   <footer>
     <p>Copyright © 2025 한봄고등학교 전공심화동아리 All rights reserved.</p>
   </footer>
-
   <script>
+    const membersData = [
+      { id: '1', name: '임준범', category: '클라우드컴퓨팅' },
+      { id: '2', name: '김건우', category: '사이버보안' },
+      { id: '3', name: '이현', category: '클라우드컴퓨팅' },
+      { id: '4', name: '이승원', category: '사이버보안' },
+      { id: '5', name: '박정근', category: '사이버보안' },
+      { id: '6', name: '김준서', category: '클라우드컴퓨팅' },
+      { id: '7', name: '김단유', category: '클라우드컴퓨팅' },
+      { id: '8', name: '석정희', category: '클라우드컴퓨팅' },
+      { id: '10', name: '박대만', category: '사이버보안' },
+      { id: '13', name: '김동예', category: '클라우드컴퓨팅' },
+      { id: '14', name: '김민준', category: '클라우드컴퓨팅' },
+      { id: '15', name: '함민식', category: '클라우드컴퓨팅' },
+      { id: '16', name: '김현수', category: '클라우드컴퓨팅' }
+    ];
+
+    const cloudContainer = document.getElementById('cloudContainer');
+    const cyberContainer = document.getElementById('cyberContainer');
+
+    membersData.forEach(member => {
+      const card = document.createElement('a');
+      card.href = `profile.html?id=${member.id}`;
+      card.className = `member-card ${member.category === '클라우드컴퓨팅' ? 'cloud' : 'cyber'}`;
+      card.innerHTML = `
+        <div class="avatar"></div>
+        <h4>${member.name}</h4>
+        <p>${member.category}</p>
+      `;
+      if (member.category === '클라우드컴퓨팅') {
+        cloudContainer.appendChild(card);
+      } else {
+        cyberContainer.appendChild(card);
+      }
+    });
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       document.body.classList.add('dark');
