@@ -233,3 +233,26 @@ body.dark footer {
   animation: fadeInUp 0.5s ease forwards;
 }
 
+
+.project-card {
+  background-color: #ffffff !important;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.project-card .card-text {
+  padding: 10px;
+  font-weight: bold;
+  color: #1a1a1a !important;
+}
+
+body.dark .project-card {
+  background-color: #ffffff !important;
+}
+
+body.dark .project-card .card-text {
+  color: #1a1a1a !important;
+}
