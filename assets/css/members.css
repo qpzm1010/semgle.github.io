@@ -210,3 +210,26 @@ body.dark footer {
     font-size: 1rem;
   }
 }
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.member-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: none;
+}
+
+.member-card.animate {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
