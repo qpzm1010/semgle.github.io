@@ -48,23 +48,168 @@
     });
 
     const membersData = [
-      { id: '1', name: '임준범', category: '클라우드컴퓨팅', bio: '🥉🥉', github: 'https://github.com/qpzm1010', joined: '2023년~2025년' },
-      { id: '2', name: '김건우', category: '사이버보안', bio: '🥉🥈', github: 'https://github.com/gunwoo105', joined: '2023년~2025년' },
-      { id: '3', name: '이현', category: '클라우드컴퓨팅', bio: '', github: 'https://github.com/dlgus081113', joined: '2024년~2026년' },
-      { id: '4', name: '이승원', category: '사이버보안', bio: '', github: '', joined: '2023년~2025년' },
-      { id: '5', name: '박정근', category: '사이버보안', bio: '', github: '', joined: '2023년~2025년' },
-      { id: '6', name: '김준서', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2023년~2025년' },
-      { id: '7', name: '김단유', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2024년~2026년' },
-      { id: '8', name: '석정희', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2024년~2026년' },
-      { id: '9', name: '이자목', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2022년~2024년' },
-      { id: '10', name: '박대만', category: '사이버보안', bio: '', github: '', joined: '2024년~2026년' },
-      { id: '11', name: '임형민', category: '클라우드컴퓨팅', bio: '🥉🥇', github: 'https://github.com/dui8', joined: '2022년~2024년' },
-      { id: '12', name: '김태인', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2022년~2024년' },
-      { id: '13', name: '김동예', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2024년~2026년' },
-      { id: '14', name: '김민준', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2024년~2026년' },
-      { id: '15', name: '함민식', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2024년~2026년' },
-      { id: '16', name: '김현수', category: '클라우드컴퓨팅', bio: '', github: '', joined: '2024년~2026년' },
-    ];
+  {
+    id: '1',
+    name: '임준범',
+    category: '클라우드컴퓨팅',
+    bio: '🥉🥉',
+    github: 'https://github.com/qpzm1010',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2024 - 전국기능경기대회 경기도대표', '2025 - 전국기능경기대회 경기도대표'],
+    achievements: ['2024 - 지방기능경기대회 3위', '2025 - 지방기능경기대회 3위']
+  },
+  {
+    id: '2',
+    name: '김건우',
+    category: '사이버보안',
+    bio: '🥉🥈',
+    github: 'https://github.com/gunwoo105',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부', '2024 - 전국기능경기대회 경기도대표', '2025 - 전국기능경기대회 경기도대표'],
+    achievements: ['2024 - 지방기능경기대회 3위', '2025 - 지방기능경기대회 2위']
+  },
+  {
+    id: '3',
+    name: '이현',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: 'https://github.com/dlgus081113',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '4',
+    name: '이승원',
+    category: '사이버보안',
+    bio: '',
+    github: '',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '5',
+    name: '박정근',
+    category: '사이버보안',
+    bio: '',
+    github: '',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '6',
+    name: '김준서',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2023년~2025년',
+    history: ['2023 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '7',
+    name: '김단유',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '8',
+    name: '석정희',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '9',
+    name: '이자목',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2022년~2024년',
+    history: ['2022 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '10',
+    name: '박대만',
+    category: '사이버보안',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '11',
+    name: '임형민',
+    category: '클라우드컴퓨팅',
+    bio: '🥉🥇',
+    github: 'https://github.com/dui8',
+    joined: '2022년~2024년',
+    history: ['2022 - 기능반 입부', '2023 - 전국기능경기대회 경기도대표', '2024 - 전국기능경기대회 경기도대표'],
+    achievements: ['2023 - 지방기능경기대회 3위', '2024 - 지방기능경기대회 1위', '2024 - 전국기능경기대회 장려상']
+  },
+  {
+    id: '12',
+    name: '김태인',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2022년~2024년',
+    history: ['2022 - 기능반 입부'],
+    achievements: ['2023 - 지방기능경기대회 장려상']
+  },
+  {
+    id: '13',
+    name: '김동예',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '14',
+    name: '김민준',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '15',
+    name: '함민식',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  },
+  {
+    id: '16',
+    name: '김현수',
+    category: '클라우드컴퓨팅',
+    bio: '',
+    github: '',
+    joined: '2024년~2026년',
+    history: ['2024 - 기능반 입부'],
+    achievements: []
+  }
+];
+
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -77,17 +222,39 @@
       const categoryClass = target.category === '클라우드컴퓨팅' ? 'cloud' : 'cyber';
       const avatarImg = target.category === '클라우드컴퓨팅' ? 'assets/img/cloud.jpg' : 'assets/img/cyber.png';
 
+      const skillHTML = (target.skills || []).map(skill => `<span class="badge">${skill}</span>`).join('');
+      const historyHTML = (target.history || []).map(h => `<li>${h}</li>`).join('');
+      const achievementsHTML = (target.achievements || []).map(a => `<li>${a}</li>`).join('');
+
       section.innerHTML = `
         <div class="profile-card ${categoryClass}">
           <div class="card-left">
             <div class="avatar" style="background-image: url('${avatarImg}');"></div>
           </div>
           <div class="card-right">
-            <h2>${target.name}</h2>
-            <p class="category">${target.category}</p>
-            <p class="joined">${target.joined}</p>
-            <p class="bio">${target.bio}</p>
-            ${target.github ? `<a class="github-link" href="${target.github}" target="_blank">🔗 GitHub</a>` : ''}
+            <div class="profile-info">
+              <h2>${target.name}</h2>
+              <p class="category">${target.category}</p>
+              <p class="joined">${target.joined}</p>
+              <p class="bio">${target.bio || ''}</p>
+              ${target.github ? `<a class="github-link" href="${target.github}" target="_blank">🔗 GitHub</a>` : ''}
+            </div>
+            <div class="profile-extra">
+              ${skillHTML ? `
+                <div class="skill-badges">${skillHTML}</div>` : ''}
+
+              ${historyHTML ? `
+                <div class="timeline">
+                  <h3>활동 연혁</h3>
+                  <ul>${historyHTML}</ul>
+                </div>` : ''}
+
+              ${achievementsHTML ? `
+                <div class="achievements">
+                  <h3>🏆 주요 수상</h3>
+                  <ul>${achievementsHTML}</ul>
+                </div>` : ''}
+            </div>
           </div>
         </div>
       `;
