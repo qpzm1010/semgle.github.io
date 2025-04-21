@@ -113,7 +113,7 @@ body.dark .project-item {
 }
 
 .project-img {
-  width: 160px;
+  width: 130px;
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
