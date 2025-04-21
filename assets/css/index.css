@@ -499,3 +499,13 @@ body.dark .banner-button {
 body.dark .banner-button:hover {
   background-color: #2b5fc0;
 }
+
+.member-card {
+  color: #111 !important;
+}
+
+.member-card h4,
+.member-card p {
+  color: #111 !important;
+}
+
