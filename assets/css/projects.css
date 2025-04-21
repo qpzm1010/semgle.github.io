@@ -229,3 +229,7 @@ body.dark footer {
     justify-content: center;
   }
 }
+
+body.dark .project-detail p {
+  color: #ffffff;
+}
